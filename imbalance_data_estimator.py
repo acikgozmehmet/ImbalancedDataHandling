@@ -3,7 +3,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.cluster import KMeans
 import pandas as pd
 
-
 class ImbalancedClass:
 	"""
 	It has been tested against binary classification.
@@ -120,7 +119,7 @@ class ImbalancedClass:
 		self.dataframe = dataframe.copy(deep=True)
 		self.target = target
 		self.type = type
-		self.method= method
+		self.method = method
 		self.sampling_strategy = sampling_strategy
 		self.random_state = random_state
 		self.replacement = replacement
@@ -225,7 +224,7 @@ class ImbalancedClass:
 
 
 		elif self.method == 'SMOTEN':
-			self.sampler = over_sampling.SMOTEN(sampling_strategy= self.sampling_strategy,
+			self.sampler = over_sampling.SMOTEN(sampling_strategy=self.sampling_strategy,
 												random_state=self.random_state,
 												k_neighbors=self.k_neighbors)
 
@@ -349,7 +348,7 @@ class ImbalancedClass:
 	def fit_resample(self):
 		if self.type == "UnderSampling":
 			self._UnderSample()
-		elif self.type == "OverSampling" :
+		elif self.type == "OverSampling":
 			self._OverSample()
 		elif self.type == "Combine" :
 			self._Combine()
